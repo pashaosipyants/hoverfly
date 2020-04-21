@@ -23,11 +23,11 @@ jobs:
     - name: Check out code
       uses: actions/checkout@v2
       with:
-        path: $GITHUB_WORKSPACE/go
+        path: {{ $env.GITHUB_WORKSPACE }}/go
 
     - name: Test
       run: make test
-      working-directory: $GITHUB_WORKSPACE/go
+      working-directory: {{ $env.GITHUB_WORKSPACE }}/go
       env:
-        GOFLAGS: "-mod=vendor"
         GOPATH: {{ $env.GITHUB_WORKSPACE }}/go
+        GOFLAGS: "-mod=vendor"
