@@ -20,14 +20,17 @@ jobs:
       with:
         node-version: '6.10.3'
 
+    - name: la-la-la
+      run: echo ${{ env.GITHUB_WORKSPACE }}
+
     - name: Check out code
       uses: actions/checkout@v2
       with:
-        path: $GITHUB_WORKSPACE/go
+        path: ${{ env.GITHUB_WORKSPACE }}/go
 
     - name: Test
       run: make test
-      working-directory: $GITHUB_WORKSPACE/go
+      working-directory: ${{ env.GITHUB_WORKSPACE }}/go
       env:
         GOPATH: ${{ env.GITHUB_WORKSPACE }}/go
         GOFLAGS: "-mod=vendor"
