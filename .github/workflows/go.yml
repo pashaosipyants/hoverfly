@@ -21,7 +21,7 @@ jobs:
         node-version: '6.10.3'
 
     - name: la-la-la
-      run: echo ${{ env.GITHUB_WORKSPACE }}
+      run: echo ${{ GITHUB_WORKSPACE }}
 
     - name: Check out code
       uses: actions/checkout@v2
