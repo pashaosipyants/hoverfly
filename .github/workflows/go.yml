@@ -29,5 +29,5 @@ jobs:
       run: make test
       working-directory: $GITHUB_WORKSPACE/go
       env:
-        GOFLAGS: -mod=vendor
+        GOFLAGS: "-mod=vendor"
         GOPATH: {{ $env.GITHUB_WORKSPACE }}/go
