@@ -26,8 +26,9 @@ jobs:
         path: $GITHUB_WORKSPACE/go
 
     - name: Test
+      id: test
       run: make test
       working-directory: $GITHUB_WORKSPACE/go
       env:
         GOFLAGS: -mod=vendor
-        GOPATH: {{ $GITHUB_WORKSPACE }}/go
+        GOPATH: ${{jobs.build.steps.test.working-directory}}
