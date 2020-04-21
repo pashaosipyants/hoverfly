@@ -1,5 +1,7 @@
 name: Test hoverfly
 
+on: [push]
+
 jobs:
 
   build:
