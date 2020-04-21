@@ -1,10 +1,4 @@
-name: Go
-
-on:
-  push:
-    branches: [ master ]
-  pull_request:
-    branches: [ master ]
+name: Test hoverfly
 
 jobs:
 
