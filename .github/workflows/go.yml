@@ -20,17 +20,14 @@ jobs:
       with:
         node-version: '6.10.3'
 
-    - name: la-la-la
-      run: echo ${{ github.workspace }}
-
     - name: Check out code
       uses: actions/checkout@v2
       with:
-        path: ${{ github.workspace }}/go
+        path: ${{ github.workspace }}/go/src/github.com/SpectoLabs/hoverfly
 
     - name: Test
       run: make test
-      working-directory: ${{ github.workspace }}/go
+      working-directory: ${{ github.workspace }}/go/src/github.com/SpectoLabs/hoverfly
       env:
         GOPATH: ${{ github.workspace }}/go
         GOFLAGS: "-mod=vendor"
